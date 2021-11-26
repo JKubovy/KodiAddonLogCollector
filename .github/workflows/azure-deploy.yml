@@ -1,11 +1,15 @@
 name: Deploy DotNet project to Azure Function App
 
-on:  pull_request:  push:    branches:      - master
+on:
+  pull_request:
+  push:
+    branches:
+      - master
 
 env:
   AZURE_FUNCTIONAPP_NAME: kodiaddonlogcollector20211126141510
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
-  DOTNET_VERSION: '3.1.21'
+  DOTNET_VERSION: '3.1.415'
 
 jobs:
   build-and-deploy:
