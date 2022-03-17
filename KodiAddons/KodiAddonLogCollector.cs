@@ -86,20 +86,4 @@ namespace KodiAddonLogCollector
             await telegramBot.SendTextMessageAsync(TELEGRAM_BOT_GROUP_ID, message, Telegram.Bot.Types.Enums.ParseMode.Markdown);
         }
     }
-
-    internal class CrashLogV1
-    {
-        public string Addon { get; set; }
-        public string Version { get; set; }
-        public string IPAddress { get; set; }
-        public string Error { get; set; }
-        [YamlMember(ScalarStyle = YamlDotNet.Core.ScalarStyle.Literal)]
-        public string Traceback { get; set; }
-        
-        public string GetNotificationText() =>
-            $"*Addon:* {Addon}\n" +
-            $"*Version:* {Version}\n" +
-            $"*IPAddress:* {IPAddress}\n" +
-            $"*Error:* {Error}";
-    }
 }
